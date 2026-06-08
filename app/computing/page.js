@@ -170,7 +170,7 @@ export default function InformationPage(){
                     
 
 
-                    <div>
+                    <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
                         <h1>2023</h1>
                         
                             
@@ -181,7 +181,11 @@ export default function InformationPage(){
                                 <p>I joined my school's Robotics Club</p>
                             </li>
                             </ul>
+                            <p>&nbsp;</p>
+                        <hr></hr>
+                        <p>&nbsp;</p>
                         <h3>November</h3>
+                        
                         <p>&nbsp;</p>
                         <ul>
                             
@@ -201,7 +205,7 @@ export default function InformationPage(){
                     
 
                     
-                    <div>
+                    <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
                         <h1>2024</h1>
                         <h3>March</h3>
                         <p>&nbsp;</p>
