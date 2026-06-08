@@ -1,0 +1,487 @@
+/* ============================================================
+   PORTFOLIO — Dark Theme Redesign
+   Color palette: near-black base, crimson-red accent, soft white text
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&display=swap');
+
+/* CSS Modules requires all selectors to be local classes.
+   Variables and resets live on .whole so they cascade to all children. */
+
+/* ── Whole page wrapper — also the CSS variable root ───────── */
+.whole {
+  /* Variables declared here cascade to every child */
+  --bg:        #080b0f;
+  --surface:   #0f1318;
+  --surface2:  #161c24;
+  --accent:    #e0132b;
+  --accent2:   #ff4458;
+  --red-glow:  rgba(224, 19, 43, 0.18);
+  --text:      #e8eaf0;
+  --muted:     #7a8494;
+  --border:    rgba(224, 19, 43, 0.25);
+  --radius:    14px;
+  --font-head: 'Sora', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+
+  /* Box-sizing for everything inside */
+  box-sizing: border-box;
+
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(224,19,43,0.12) 0%, transparent 70%);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: var(--font-head);
+  margin: 0;
+}
+
+/* Apply box-sizing to all children via a scoped selector */
+.whole *,
+.whole *::before,
+.whole *::after {
+  box-sizing: inherit;
+}
+
+/* ── Hero / Title Banner ────────────────────────────────────── */
+.container {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg,
+    rgba(224,19,43,0.85) 0%,
+    rgba(14,6,6,0.95)   60%,
+    rgba(8,11,15,1)     100%);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  max-width: 960px;
+  margin: 2.5rem auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow:
+    0 0 60px rgba(224,19,43,0.15),
+    0 2px 0 var(--accent) inset;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.012) 2px,
+    rgba(255,255,255,0.012) 4px
+  );
+  pointer-events: none;
+}
+
+.container h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+  background: linear-gradient(90deg, #fff 30%, var(--accent2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+/* ── Section heading (hi / My Journey / My Projects) ────────── */
+.hi {
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2rem 1.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-family: var(--font-head);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  position: relative;
+}
+
+.hi h2 {
+  font-size: inherit;
+  margin: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.hi h2::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 60%;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 0.5rem auto 0;
+  box-shadow: 0 0 12px var(--accent);
+}
+
+/* ── Two-column row layout ──────────────────────────────────── */
+.rows {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 20px;
+  padding: 1.5rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.left, .right {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Skills card ────────────────────────────────────────────── */
+.skills {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  color: var(--text);
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.skills:hover {
+  box-shadow: 0 0 30px var(--red-glow);
+}
+
+.skills h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--accent2);
+  letter-spacing: 0.02em;
+  font-family: var(--font-head);
+  text-transform: uppercase;
+}
+
+.skills ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skills > ul > li {
+  padding: 0.35rem 0;
+  font-weight: 600;
+  color: var(--accent2);
+  font-size: 1rem;
+}
+
+.skills > ul > li::before {
+  content: '▸ ';
+  color: var(--accent);
+}
+
+.skills ul ul {
+  padding-left: 1.4rem;
+  list-style-type: none;
+}
+
+.skills ul ul li {
+  padding: 0.2rem 0;
+  font-weight: 400;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.skills ul ul li::before {
+  content: '– ';
+  color: var(--muted);
+}
+
+.skills ul ul ul {
+  padding-left: 1.2rem;
+}
+
+.skills ul ul ul li {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.skills ul ul ul li::before {
+  content: '· ';
+}
+
+/* ── Table cards (workshops, awards) ────────────────────────── */
+.colortable {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  color: var(--text);
+  font-family: var(--font-head);
+  font-size: 0.92rem;
+  width: 100%;
+  flex: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+.colortable:hover {
+  box-shadow: 0 0 30px var(--red-glow);
+}
+
+.colortable ul {
+  list-style-type: disc;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+}
+
+/* ── Awards / newtable ──────────────────────────────────────── */
+.newtable {
+  display: flex;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  color: var(--text);
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  max-width: 960px;
+  margin: 0 auto 1rem;
+  width: calc(100% - 4rem);
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.newtable:hover {
+  box-shadow: 0 0 30px var(--red-glow);
+}
+
+/* ── Shared table styles ────────────────────────────────────── */
+.bordertable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.bordertable th,
+.bordertable td {
+  border: 1px solid var(--border);
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-weight: 400;
+  vertical-align: top;
+}
+
+.bordertable tr:first-child th {
+  background: rgba(224,19,43,0.15);
+  color: var(--accent2);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+}
+
+.bordertable tr:hover {
+  background: rgba(255,255,255,0.025);
+}
+
+/* ── Timeline / Journey cards ───────────────────────────────── */
+.twentythree {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 2.5rem 3rem;
+  color: var(--text);
+  width: min(1100px, calc(100% - 4rem));
+  margin: 0 auto 1.5rem;
+  position: relative;
+  transition: box-shadow 0.3s ease, border-left-color 0.3s ease;
+}
+
+.twentythree:hover {
+  box-shadow: 0 0 40px var(--red-glow), -4px 0 0 var(--accent2);
+  border-left-color: var(--accent2);
+}
+
+/* Year heading */
+.twentythree h1 {
+  font-family: var(--font-mono);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 1rem;
+  letter-spacing: -0.04em;
+  text-shadow: 0 0 30px rgba(224,19,43,0.4);
+}
+
+/* Month subheading */
+.twentythree h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent2);
+  margin: 1.5rem 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+}
+
+/* Entry subheadings */
+.twentythree h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 1rem 0 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* Body text */
+.twentythree p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #c5cad5;
+  margin: 0.3rem 0;
+}
+
+.twentythree hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* Tables inside journey cards */
+.twentythree table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.twentythree th {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  background: var(--surface2);
+  text-align: left;
+  font-size: 0.88rem;
+}
+
+/* Lists inside journey cards */
+.twentythree ul {
+  list-style-type: none;
+  padding-left: 1.2rem;
+}
+
+.twentythree ul li {
+  padding: 0.2rem 0;
+  position: relative;
+}
+
+.twentythree ul li::before {
+  content: '▸';
+  color: var(--accent);
+  position: absolute;
+  left: -1.1rem;
+  font-size: 0.75rem;
+  top: 0.25rem;
+}
+
+.twentythree ul ul {
+  padding-left: 1.4rem;
+  list-style-type: none;
+  font-size: 0.9rem;
+  color: #9ba3b0;
+}
+
+.twentythree ul ul li::before {
+  content: '–';
+  color: var(--muted);
+}
+
+/* iframe centering */
+.twentythree iframe {
+  display: block;
+  margin: 1rem 0;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+/* ── Image row ──────────────────────────────────────────────── */
+.imagerow {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.imagerow img {
+  width: 280px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.imagerow img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px var(--red-glow);
+}
+
+/* ── Button row ─────────────────────────────────────────────── */
+.buttonRow {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.buttonRow button {
+  padding: 0.55rem 1.2rem;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent2);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buttonRow button:hover {
+  background: rgba(224,19,43,0.15);
+  box-shadow: 0 0 12px var(--red-glow);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .rows {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .twentythree {
+    padding: 1.5rem 1.2rem;
+    width: calc(100% - 2rem);
+  }
+
+  .newtable {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+  }
+
+  .container {
+    margin: 1rem;
+  }
+}
