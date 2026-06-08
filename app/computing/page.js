@@ -265,10 +265,10 @@ export default function InformationPage(){
                                 <p>&nbsp;</p>
                                 <div style={{display:'flex',flexDirection:'row',gap:'20px'}}>
                                     <div style={{display:'flex',flexDirection:'column'}}>
-                                        <Image src="/images/nytc.jfif" alt="nytc" width={800} height={250}/>
+                                        <Image src="/images/nytc.jpg" alt="nytc" width={800} height={250}/>
                                     </div>
                                     <div style={{display:'flex',flexDirection:'column'}}>
-                                        <Image src="/images/nytc2.jfif" alt="nytc" width={800} height={250}/>
+                                        <Image src="/images/nytc2.jpg" alt="nytc" width={800} height={250}/>
                                     </div>
                                 </div>
                                 <p>&nbsp;</p>
