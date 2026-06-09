@@ -19,7 +19,7 @@ export default function InformationPage(){
                     <p>The two buttons below are linked to my portfolio.</p>
                     </div>
                     <div>
-                <img src="/images/photoinvietnam12.png" alt="photoinvietnam" width={640} height={320}></img>
+                <img src="/images/face.jpeg" alt="photoinvietnam" width={640} height={320}></img>
                 </div>
                 </div>
                 <div style={{display:'flex', flexDirection: 'row', alignItems: 'stretch', justifyContent:'center', gap:'20px', padding:'0 2rem 2rem' }}>
