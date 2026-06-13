@@ -50,14 +50,7 @@ export default function InformationPage(){
                         </div>
                     </div>
 
-                    <div className={styles.timelineItem}>
-                        <div className={styles.timelineDot}></div>
-                        <div className={styles.timelineCard}>
-                            <h3 className={styles.timelineTitle}>Chess Club — President</h3>
-                            <span className={styles.timelineYear}>2025  </span>
-                            <p className={styles.timelineDesc}>Participated actively in STEM workshops and helped facilitate learning sessions for junior members.</p>
-                        </div>
-                    </div>
+                    
  
                     <div className={styles.timelineItem}>
                         <div className={styles.timelineDot}></div>
