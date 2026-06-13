@@ -83,14 +83,7 @@ STEM Enrichment: Explored STEM projects outside the school curriculum to broaden
                 </div>
  
                 <div className={styles.timeline}>
-                    <div className={styles.timelineItem}>
-                        <div className={styles.timelineDot}></div>
-                        <div className={styles.timelineCard}>
-                            <h3 className={styles.timelineTitle}>Artificial Intelligence & Machine Learning</h3>
-                            <span className={styles.timelineYear}>Passion</span>
-                            <p className={styles.timelineDesc}>I enjoy learning about AI models, deep learning architectures, and how AI is transforming the world. I regularly read research papers and experiment with small AI projects.</p>
-                        </div>
-                    </div>
+                    
  
                     <div className={styles.timelineItem}>
                         <div className={styles.timelineDot}></div>
