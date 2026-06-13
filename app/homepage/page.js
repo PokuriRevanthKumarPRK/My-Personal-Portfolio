@@ -97,9 +97,9 @@ STEM Enrichment: Explored STEM projects outside the school curriculum to broaden
                     <div className={styles.timelineItem}>
                         <div className={styles.timelineDot}></div>
                         <div className={styles.timelineCard}>
-                            <h3 className={styles.timelineTitle}>Playing Chess</h3>
+                            <h3 className={styles.timelineTitle}>Playing Competitive Chess</h3>
                             <span className={styles.timelineYear}>Hobby</span>
-                            <p className={styles.timelineDesc}></p>
+                            <p className={styles.timelineDesc}>I play chess competitively, using it as a high-intensity mental workout. Competing teaches me to think several moves ahead, anticipate an opponent's strategy, and maintain sharp focus and composure under intense time pressure.</p>
                         </div>
                     </div>
                 </div>
