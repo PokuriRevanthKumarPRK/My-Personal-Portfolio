@@ -41,8 +41,6 @@ export default function InformationPage(){
                                             <li>Convolutional Neural Network</li>
                                             <li>Recurrent Neural Network</li>
                                             <li>LSTM</li>
-                                            <li>Embeddings</li>
-                                            <li>Transformers</li>
                                             <li>Backpropagation Via Gradient Descent</li>
                                         </ul>
                                 </ul>
